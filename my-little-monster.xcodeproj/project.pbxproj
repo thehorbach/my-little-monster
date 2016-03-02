@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1130C0E01C8700D800F77188 /* MonsterImg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1130C0DF1C8700D800F77188 /* MonsterImg.swift */; };
 		11437D111C835E7D006B1355 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11437D101C835E7D006B1355 /* AppDelegate.swift */; };
 		11437D131C835E7D006B1355 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11437D121C835E7D006B1355 /* ViewController.swift */; };
 		11437D161C835E7D006B1355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11437D141C835E7D006B1355 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1130C0DF1C8700D800F77188 /* MonsterImg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MonsterImg.swift; sourceTree = "<group>"; };
 		11437D0D1C835E7D006B1355 /* my-little-monster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "my-little-monster.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		11437D101C835E7D006B1355 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		11437D121C835E7D006B1355 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				11437D191C835E7D006B1355 /* LaunchScreen.storyboard */,
 				11437D1C1C835E7D006B1355 /* Info.plist */,
 				11D73D801C85001500DF52A1 /* DragImg.swift */,
+				1130C0DF1C8700D800F77188 /* MonsterImg.swift */,
 			);
 			path = "my-little-monster";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1130C0E01C8700D800F77188 /* MonsterImg.swift in Sources */,
 				11D73D811C85001500DF52A1 /* DragImg.swift in Sources */,
 				11437D131C835E7D006B1355 /* ViewController.swift in Sources */,
 				11437D111C835E7D006B1355 /* AppDelegate.swift in Sources */,
