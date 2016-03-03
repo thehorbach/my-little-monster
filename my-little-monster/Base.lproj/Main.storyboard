@@ -67,6 +67,13 @@
                                     <constraint firstAttribute="width" constant="552" id="2uB-eF-Ohi"/>
                                 </constraints>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="idle1a" translatesAutoresizingMaskIntoConstraints="NO" id="Ksc-0e-Bqh" userLabel="rockMonsterImg" customClass="RockMonsterImg" customModule="my_little_monster" customModuleProvider="target">
+                                <rect key="frame" x="65" y="236" width="313" height="354"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="354" id="UZD-Ck-i31"/>
+                                    <constraint firstAttribute="width" constant="313" id="lHm-Tm-tni"/>
+                                </constraints>
+                            </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="5EB-TU-oQ3">
                                 <rect key="frame" x="155" y="101" width="290" height="98"/>
                                 <subviews>
@@ -101,21 +108,50 @@
                                     <action selector="onTappedRestartGame:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8p8-LT-3I8"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="DaA-K4-M6o">
+                                <rect key="frame" x="148" y="236" width="305" height="36"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zce-2G-UNS">
+                                        <rect key="frame" x="0.0" y="0.0" width="135" height="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Adult Monster">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startGameWithAdultMontster:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FYc-8e-AAq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNt-T1-r6W">
+                                        <rect key="frame" x="170" y="0.0" width="135" height="36"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
+                                        <state key="normal" title="Child Monster">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="startGameWithChildMonster:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oXA-iL-a4X"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Udv-36-ukF" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="39d-Dg-p7u"/>
                             <constraint firstItem="5EB-TU-oQ3" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="3er-Su-FNr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Ksc-0e-Bqh" secondAttribute="bottom" constant="10" id="4ls-Rm-iVU"/>
                             <constraint firstItem="KR6-JH-qLU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-25" id="52p-fl-RKQ"/>
+                            <constraint firstItem="Ksc-0e-Bqh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="5aG-ef-zqF"/>
                             <constraint firstItem="Udv-36-ukF" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CAQ-zN-dd6"/>
                             <constraint firstItem="5EB-TU-oQ3" firstAttribute="top" secondItem="cP2-ba-CxS" secondAttribute="bottom" constant="15" id="CbU-st-7Bq"/>
+                            <constraint firstItem="DaA-K4-M6o" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="GQe-Iy-v6G"/>
                             <constraint firstAttribute="trailing" secondItem="e3Z-bt-XA2" secondAttribute="trailing" id="GeQ-45-QdY"/>
+                            <constraint firstItem="DaA-K4-M6o" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NFU-4L-9UW"/>
                             <constraint firstItem="cP2-ba-CxS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PT3-9L-bqa"/>
                             <constraint firstItem="e3Z-bt-XA2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="VIJ-6j-OJ6"/>
                             <constraint firstItem="cP2-ba-CxS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WzG-8b-Djj"/>
                             <constraint firstItem="5EB-TU-oQ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZtU-CK-10o"/>
                             <constraint firstAttribute="trailing" secondItem="k8C-B3-G7B" secondAttribute="trailing" id="b2T-WK-LBp"/>
-                            <constraint firstItem="5EB-TU-oQ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="57" id="bMg-Pg-7E8"/>
+                            <constraint firstItem="5EB-TU-oQ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="bMg-Pg-7E8"/>
                             <constraint firstItem="k8C-B3-G7B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iIR-Ld-bYZ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KR6-JH-qLU" secondAttribute="bottom" constant="-17" id="ogz-5M-YiI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e3Z-bt-XA2" secondAttribute="bottom" id="r6h-Vi-jOB"/>
@@ -140,13 +176,17 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="adultMonsterBtn" destination="Zce-2G-UNS" id="YPw-9W-yK9"/>
+                        <outlet property="childMonsterBtn" destination="hNt-T1-r6W" id="Jag-GZ-MMD"/>
                         <outlet property="foodImg" destination="P3F-cK-IdS" id="iGF-Dn-paA"/>
                         <outlet property="heartImg" destination="pIz-da-NUd" id="qV2-CJ-ULw"/>
+                        <outlet property="livesPanel" destination="cP2-ba-CxS" id="Cky-7U-BKC"/>
                         <outlet property="monsterImg" destination="KR6-JH-qLU" id="LfV-q3-9jM"/>
                         <outlet property="penalty1" destination="9Au-60-19X" id="kyi-7u-l5O"/>
                         <outlet property="penalty2" destination="98u-1U-rfP" id="brJ-QI-wca"/>
                         <outlet property="penalty3" destination="FfG-J7-k3m" id="4GV-C8-inX"/>
                         <outlet property="restartBtn" destination="Udv-36-ukF" id="c2b-bl-2xR"/>
+                        <outlet property="rockMonsterImg" destination="Ksc-0e-Bqh" id="uE1-RF-GtC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -160,6 +200,7 @@
         <image name="ground" width="1444" height="151"/>
         <image name="heart" width="95" height="98"/>
         <image name="idle1" width="889" height="615"/>
+        <image name="idle1a" width="271" height="239"/>
         <image name="livespanel" width="468" height="137"/>
         <image name="restart" width="128" height="128"/>
         <image name="skull" width="95" height="98"/>

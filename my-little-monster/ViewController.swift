@@ -12,14 +12,20 @@ import AVFoundation
 class ViewController: UIViewController {
 
     @IBOutlet weak var monsterImg: MonsterImg!
+    @IBOutlet weak var rockMonsterImg: RockMonsterImg!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
+    @IBOutlet weak var livesPanel: UIImageView!
 
     @IBOutlet weak var penalty1: UIImageView!
     @IBOutlet weak var penalty2: UIImageView!
     @IBOutlet weak var penalty3: UIImageView!
     
     @IBOutlet weak var restartBtn: UIButton!
+    
+    @IBOutlet weak var childMonsterBtn: UIButton!
+    @IBOutlet weak var adultMonsterBtn: UIButton!
+    
     
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
@@ -29,6 +35,7 @@ class ViewController: UIViewController {
     var timer: NSTimer!
     var monsterHappy = true
     var currentItem: UInt32 = 0
+    var monsterType = 0
     
     var musicPlayer: AVAudioPlayer!
     var sfxBite: AVAudioPlayer!
@@ -38,9 +45,6 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        foodImg.dropTarget = monsterImg
-        heartImg.dropTarget = monsterImg
         
         penalty1.alpha = DIM_ALPHA
         penalty2.alpha = DIM_ALPHA
@@ -75,8 +79,10 @@ class ViewController: UIViewController {
             print(err.debugDescription)
         }
         
-        petInteractionDisabled()
-        startTimer()
+        hideThingsBeginingGame()
+        
+        
+        
         
     }
     
@@ -155,7 +161,12 @@ class ViewController: UIViewController {
     
     func gameOver() {
         timer.invalidate()
-        monsterImg.playDeathAnimation()
+        if monsterType == 0 {
+            monsterImg.playDeathAnimation()
+        } else {
+            rockMonsterImg.playDeathAnimation()
+        }
+        
         sfxDeath.play()
         
         petInteractionDisabled()
@@ -175,7 +186,12 @@ class ViewController: UIViewController {
     
     @IBAction func onTappedRestartGame(sender: AnyObject) {
         
-        monsterImg.playIdleAnimation()
+        if monsterType == 0 {
+            monsterImg.playIdleAnimation()
+        } else {
+            rockMonsterImg.playIdleAnimation()
+        }
+        
         penalties = 0
         monsterHappy = true
         petInteractionDisabled()
@@ -188,6 +204,63 @@ class ViewController: UIViewController {
         restartBtn.hidden = true
     }
     
+    @IBAction func startGameWithAdultMontster(sender: AnyObject) {
+        monsterType = 0
+        foodImg.dropTarget = monsterImg
+        heartImg.dropTarget = monsterImg
+        
+        monsterImg.hidden = false
+        IconsShow()
+        
+        hideCharacterSelecetionBtns()
+        
+        startGame()
+    }
+    
+  
+    @IBAction func startGameWithChildMonster(sender: AnyObject) {
+        monsterType = 1
+        foodImg.dropTarget = rockMonsterImg
+        heartImg.dropTarget = rockMonsterImg
+        
+        rockMonsterImg.hidden = false
+        IconsShow()
+        
+        hideCharacterSelecetionBtns()
+        
+        startGame()
+    }
+    
+    func hideThingsBeginingGame() {
+        monsterImg.hidden = true
+        rockMonsterImg.hidden = true
+        restartBtn.hidden = true
+        foodImg.hidden = true
+        heartImg.hidden = true
+        penalty1.hidden = true
+        penalty2.hidden = true
+        penalty3.hidden = true
+        livesPanel.hidden = true
+        
+    }
+    
+    func startGame() {
+        petInteractionDisabled()
+        startTimer()
+    }
+    func IconsShow() {
+        foodImg.hidden = false
+        heartImg.hidden = false
+        penalty1.hidden = false
+        penalty2.hidden = false
+        penalty3.hidden = false
+        livesPanel.hidden = false
+    }
+    
+    func hideCharacterSelecetionBtns() {
+        childMonsterBtn.hidden = true
+        adultMonsterBtn.hidden = true
+    }
 
 }
 
