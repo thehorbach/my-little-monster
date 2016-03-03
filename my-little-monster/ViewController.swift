@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var rockMonsterImg: RockMonsterImg!
     @IBOutlet weak var foodImg: DragImg!
     @IBOutlet weak var heartImg: DragImg!
+    @IBOutlet weak var drinkImg: DragImg!
     @IBOutlet weak var livesPanel: UIImageView!
 
     @IBOutlet weak var penalty1: UIImageView!
@@ -42,6 +43,7 @@ class ViewController: UIViewController {
     var sfxHeart: AVAudioPlayer!
     var sfxDeath: AVAudioPlayer!
     var sfxSkull: AVAudioPlayer!
+    var sfxDrinking: AVAudioPlayer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +68,8 @@ class ViewController: UIViewController {
             
             try sfxSkull = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("skull", ofType: "wav")!))
             
+            try sfxDrinking = AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("drinking", ofType: "mp3")!))
+            
             
             musicPlayer.prepareToPlay()
             musicPlayer.play()
@@ -74,6 +78,7 @@ class ViewController: UIViewController {
             sfxHeart.prepareToPlay()
             sfxDeath.prepareToPlay()
             sfxSkull.prepareToPlay()
+            sfxDrinking.prepareToPlay()
             
         } catch let err as NSError {
             print(err.debugDescription)
@@ -94,8 +99,10 @@ class ViewController: UIViewController {
         
         if currentItem == 0 {
             sfxHeart.play()
-        } else {
+        } else if currentItem == 1 {
             sfxBite.play()
+        } else {
+            sfxDrinking.play()
         }
     }
     
@@ -139,20 +146,36 @@ class ViewController: UIViewController {
             }
         }
         
-        let rand = arc4random_uniform(2)
+        let rand = arc4random_uniform(3)
         
         if rand == 0 {
             foodImg.alpha = DIM_ALPHA
             foodImg.userInteractionEnabled = false
             
+            drinkImg.alpha = DIM_ALPHA
+            drinkImg.userInteractionEnabled = false
+            
             heartImg.alpha = OPAQUE
             heartImg.userInteractionEnabled = true
+        } else if rand == 1 {
+            heartImg.alpha = DIM_ALPHA
+            heartImg.userInteractionEnabled = false
+            
+            drinkImg.alpha = DIM_ALPHA
+            drinkImg.userInteractionEnabled = false
+            
+            foodImg.alpha = OPAQUE
+            foodImg.userInteractionEnabled = true
         } else {
             heartImg.alpha = DIM_ALPHA
             heartImg.userInteractionEnabled = false
             
-            foodImg.alpha = OPAQUE
-            foodImg.userInteractionEnabled = true
+            drinkImg.alpha = OPAQUE
+            drinkImg.userInteractionEnabled = true
+            
+            foodImg.alpha = DIM_ALPHA
+            foodImg.userInteractionEnabled = false
+            
         }
         
         currentItem = rand
@@ -178,6 +201,9 @@ class ViewController: UIViewController {
     func petInteractionDisabled() {
         foodImg.alpha = DIM_ALPHA
         foodImg.userInteractionEnabled = false
+        
+        drinkImg.alpha = DIM_ALPHA
+        drinkImg.userInteractionEnabled = false
         
         heartImg.alpha = DIM_ALPHA
         heartImg.userInteractionEnabled = false
@@ -208,6 +234,7 @@ class ViewController: UIViewController {
         monsterType = 0
         foodImg.dropTarget = monsterImg
         heartImg.dropTarget = monsterImg
+        drinkImg.dropTarget = monsterImg
         
         monsterImg.hidden = false
         IconsShow()
@@ -222,6 +249,7 @@ class ViewController: UIViewController {
         monsterType = 1
         foodImg.dropTarget = rockMonsterImg
         heartImg.dropTarget = rockMonsterImg
+        drinkImg.dropTarget = rockMonsterImg
         
         rockMonsterImg.hidden = false
         IconsShow()
@@ -233,6 +261,7 @@ class ViewController: UIViewController {
     
     func hideThingsBeginingGame() {
         monsterImg.hidden = true
+        drinkImg.hidden = true
         rockMonsterImg.hidden = true
         restartBtn.hidden = true
         foodImg.hidden = true
@@ -250,6 +279,7 @@ class ViewController: UIViewController {
     }
     func IconsShow() {
         foodImg.hidden = false
+        drinkImg.hidden = false
         heartImg.hidden = false
         penalty1.hidden = false
         penalty2.hidden = false

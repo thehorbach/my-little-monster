@@ -74,33 +74,6 @@
                                     <constraint firstAttribute="width" constant="313" id="lHm-Tm-tni"/>
                                 </constraints>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" distribution="fillEqually" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="5EB-TU-oQ3">
-                                <rect key="frame" x="155" y="101" width="290" height="98"/>
-                                <subviews>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-da-NUd" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="95" height="98"/>
-                                    </imageView>
-                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="P3F-cK-IdS" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
-                                        <rect key="frame" x="195" y="0.0" width="95" height="98"/>
-                                    </imageView>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="95" id="qdM-nh-v9o"/>
-                                    <constraint firstAttribute="height" constant="246" id="yWm-Qb-pkS"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="qdM-nh-v9o"/>
-                                        <exclude reference="yWm-Qb-pkS"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact" axis="vertical" spacing="50">
-                                    <mask key="constraints">
-                                        <include reference="qdM-nh-v9o"/>
-                                        <include reference="yWm-Qb-pkS"/>
-                                    </mask>
-                                </variation>
-                            </stackView>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Udv-36-ukF">
                                 <rect key="frame" x="236" y="236" width="128" height="128"/>
                                 <state key="normal" image="restart"/>
@@ -133,6 +106,40 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5EB-TU-oQ3">
+                                <rect key="frame" x="148" y="103" width="305" height="98"/>
+                                <subviews>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" translatesAutoresizingMaskIntoConstraints="NO" id="pIz-da-NUd" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="95" height="98"/>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="water-drop (1)" translatesAutoresizingMaskIntoConstraints="NO" id="JaQ-nN-w7z" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
+                                        <rect key="frame" x="105" y="0.0" width="95" height="98"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="95" id="E2C-Zc-3cM"/>
+                                            <constraint firstAttribute="height" constant="98" id="VOh-i9-vw3"/>
+                                        </constraints>
+                                    </imageView>
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="food" translatesAutoresizingMaskIntoConstraints="NO" id="P3F-cK-IdS" customClass="DragImg" customModule="my_little_monster" customModuleProvider="target">
+                                        <rect key="frame" x="210" y="0.0" width="95" height="98"/>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="95" id="qdM-nh-v9o"/>
+                                    <constraint firstAttribute="height" constant="246" id="yWm-Qb-pkS"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="qdM-nh-v9o"/>
+                                        <exclude reference="yWm-Qb-pkS"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=compact" axis="vertical" spacing="34">
+                                    <mask key="constraints">
+                                        <include reference="qdM-nh-v9o"/>
+                                        <include reference="yWm-Qb-pkS"/>
+                                    </mask>
+                                </variation>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -151,7 +158,7 @@
                             <constraint firstItem="cP2-ba-CxS" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="WzG-8b-Djj"/>
                             <constraint firstItem="5EB-TU-oQ3" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZtU-CK-10o"/>
                             <constraint firstAttribute="trailing" secondItem="k8C-B3-G7B" secondAttribute="trailing" id="b2T-WK-LBp"/>
-                            <constraint firstItem="5EB-TU-oQ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="35" id="bMg-Pg-7E8"/>
+                            <constraint firstItem="5EB-TU-oQ3" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bMg-Pg-7E8"/>
                             <constraint firstItem="k8C-B3-G7B" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="iIR-Ld-bYZ"/>
                             <constraint firstAttribute="bottomMargin" secondItem="KR6-JH-qLU" secondAttribute="bottom" constant="-17" id="ogz-5M-YiI"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="e3Z-bt-XA2" secondAttribute="bottom" id="r6h-Vi-jOB"/>
@@ -178,6 +185,7 @@
                     <connections>
                         <outlet property="adultMonsterBtn" destination="Zce-2G-UNS" id="YPw-9W-yK9"/>
                         <outlet property="childMonsterBtn" destination="hNt-T1-r6W" id="Jag-GZ-MMD"/>
+                        <outlet property="drinkImg" destination="JaQ-nN-w7z" id="fhz-G5-ZLb"/>
                         <outlet property="foodImg" destination="P3F-cK-IdS" id="iGF-Dn-paA"/>
                         <outlet property="heartImg" destination="pIz-da-NUd" id="qV2-CJ-ULw"/>
                         <outlet property="livesPanel" destination="cP2-ba-CxS" id="Cky-7U-BKC"/>
@@ -204,5 +212,6 @@
         <image name="livespanel" width="468" height="137"/>
         <image name="restart" width="128" height="128"/>
         <image name="skull" width="95" height="98"/>
+        <image name="water-drop (1)" width="256" height="256"/>
     </resources>
 </document>
