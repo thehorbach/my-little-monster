@@ -19,6 +19,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var penalty2: UIImageView!
     @IBOutlet weak var penalty3: UIImageView!
     
+    @IBOutlet weak var restartBtn: UIButton!
+    
     let DIM_ALPHA: CGFloat = 0.2
     let OPAQUE: CGFloat = 1.0
     let MAX_PENALTIES = 3
@@ -74,7 +76,7 @@ class ViewController: UIViewController {
         }
         
         petInteractionDisabled()
-        changeGameState()
+        startTimer()
         
     }
     
@@ -155,6 +157,11 @@ class ViewController: UIViewController {
         timer.invalidate()
         monsterImg.playDeathAnimation()
         sfxDeath.play()
+        
+        petInteractionDisabled()
+        
+        restartBtn.hidden = false
+        
     }
     
     func petInteractionDisabled() {
@@ -163,7 +170,24 @@ class ViewController: UIViewController {
         
         heartImg.alpha = DIM_ALPHA
         heartImg.userInteractionEnabled = false
+
     }
+    
+    @IBAction func onTappedRestartGame(sender: AnyObject) {
+        
+        monsterImg.playIdleAnimation()
+        penalties = 0
+        monsterHappy = true
+        petInteractionDisabled()
+        startTimer()
+        
+        penalty1.alpha = DIM_ALPHA
+        penalty2.alpha = DIM_ALPHA
+        penalty3.alpha = DIM_ALPHA
+        
+        restartBtn.hidden = true
+    }
+    
 
 }
 
